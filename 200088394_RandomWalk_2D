@@ -52,7 +52,8 @@ for DirectionAngle = 1 : MaxDirectionAngle / DeltaDirectionAngle
         for NumberOfJumping_Counter = 1 : NumberOfJumping_Total
             PseudoVector_X = PositionRecorder(NumberOfRunning_Counter, NumberOfJumping_Counter, 1);
             PseudoVector_Y = PositionRecorder(NumberOfRunning_Counter, NumberOfJumping_Counter, 2);
-            PartialDisplacement(NumberOfRunning_Counter, NumberOfJumping_Counter) = norm(dot([PseudoVector_X, PseudoVector_Y], [UnitVector_X, UnitVector_Y]));
+            PartialDisplacement(NumberOfRunning_Counter, NumberOfJumping_Counter) = norm(dot([PseudoVector_X, PseudoVector_Y], ...
+                                                                                         [UnitVector_X, UnitVector_Y]));
             sum = sum + PartialDisplacement(NumberOfRunning_Counter, NumberOfJumping_Counter).^2;
         end
     end
